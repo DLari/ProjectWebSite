@@ -3,41 +3,35 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
+import java.util.List;
 
 @Entity
+@Setter
+@Getter
 @Table(name="users")
 public class Users {
 
+    @OneToMany(mappedBy = "users")
+    private List<Orders> orders;
+
     @Id
-    @GeneratedValue
-    @Setter
-    @Getter
+   // @GeneratedValue
     @Column(name = "id")
     private Integer id;
 
-    @Setter
-    @Getter
     @Column(name = "fio")
     private String fio;
 
-    @Setter
-    @Getter
     @Column( name = "date_of_birth")
     private Date dateOfBirth;
 
-    @Setter
-    @Getter
-    @Column( name = "login")
+    @Column( name = "login_client")
     private String login;
 
-    @Setter
-    @Getter
-    @Column(name = "password")
+    @Column(name = "password_client")
     private String password;
 
-    @Setter
-    @Getter
     @Column( name = "rule")
-    private Enum rule;
+    private String rule;
 }

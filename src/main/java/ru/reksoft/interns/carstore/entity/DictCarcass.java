@@ -4,25 +4,27 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
+@Setter
+@Getter
 @Table(name="dict_carcass")
 public class DictCarcass {
 
-    @ManyToOne
+   /* @ManyToOne
     @JoinColumn(name = "model_id")
-    private Model model;
+    private Model model;*/
+
+   /* @OneToMany(mappedBy = "dict_carcass")
+    private List<Model> models;*/
 
     @Id
-    @GeneratedValue
-    @Setter
-    @Getter
+   // @GeneratedValue
    @Column(name = "id")
     private Integer id;
 
-    @Setter
-    @Getter
-    @Column( name = "id")
+    @Column( name = "name")
     private String name;
 
 }

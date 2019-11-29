@@ -6,32 +6,35 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 
+
+@Setter
+@Getter
 @Entity
 @Table(name="auto_in_stock")
 public class AutoInStock {
 
-   /* @OneToMany(cascade = CascadeType.ALL, mappedBy = "auto_in_stock")
-    private List<Color> colors;*/
+    @OneToMany(mappedBy = "autoInStock")
+    private List<Orders> orders;
 
     @ManyToOne
     @JoinColumn(name = "color_id")
     private Color color;
 
-    @OneToMany(  cascade = CascadeType.ALL, mappedBy = "auto_in_stock")
-    private List<Engine> engines;
+    @ManyToOne
+    @JoinColumn(name = "engine_id")
+    private Engine engine ;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "auto_in_stock")
-    private List<Model> models;
+    @ManyToOne
+    @JoinColumn(name = "model_id")
+    private Model model;
+
+
 
     @Id
-    @GeneratedValue
-    @Setter
-    @Getter
+    //@GeneratedValue
    @Column(name = "id")
     private Integer id;
 
-    @Setter
-    @Getter
     @Column(name = "presence")
     private Integer presence;
 

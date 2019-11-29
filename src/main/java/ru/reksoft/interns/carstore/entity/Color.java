@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Setter
@@ -14,29 +15,25 @@ import java.math.BigDecimal;
 @Table(name="color")
 public class Color {
 
-
+ /*@OneToMany(mappedBy = "color")
+    private List<AutoInStock> autoInStocks;*/
 
     @Id
   //  @NotNull
-    @GeneratedValue
-   /* @Setter
-    @Getter*/
+    //@GeneratedValue
    @Column(name = "id")
     private Integer id;
 
-    @Setter
-    @Getter
+
     @Column( name = "name")
     private String name;
 
    // @Positive
-    @Setter
-    @Getter
+
     @Column(name = "price")
     private BigDecimal price;
 
-    @Setter
-    @Getter
+
     @Column(name = "removed")
     private Boolean removed;
 }
