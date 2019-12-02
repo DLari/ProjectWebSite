@@ -2,44 +2,20 @@
       id: 2
       author: your_liquibase_username
       comment: "Create users"
-      changes:
-        - insert:
-            tableName: users
-            columns:
-              - column:
-                  name: fio
-                  value: "IvanovIvanIvanovich"
-              - column:
-                  name: date_of_birth
-                  value: "04.07.2000"
-              - column:
-                  name: login_client
-                  value: "newlogin"
-              - column:
-                  name: password
-                  value: "newpassword1234"
-              - column:
-                  name: rule
-                  value: "client"
-        - insert:
-            tableName: users
-            columns:
-              - column:
-                  name: fio
-                  value: "PetrovPetrPetrovich"
-              - column:
-                  name: date_of_birth
-                  value: "01.01.2002"
-              - column:
-                  name: login_client
-                  value: "loginqwe1"
-              - column:
-                  name: password
-                  value: "aqwr1245"
-              - column:
-                  name: rule
-                  value: "client"
-      rollback:
-        - delete:
-            tableName: users
-            where: username in ('IvanovIvanIvanovich', 'PetrovPetrPetrovich')
+
+    sqlFile:dbms="hsqldb" path="src/main/resources/db/changelog/insertScript v1.sql"
+
+    <sqlFile dbms="hsqldb" path="src/main/resources/db/changelog/insertScript v1.sql"/>
+changeSet:
+  id: sqlFile-example
+  author: liquibase-docs
+  objectQuotingStrategy: LEGACY
+  changes:
+    - sqlFile:
+        dbms: hsqldb
+        encoding: UTF-8
+        endDelimiter: \nGO
+        path: src/main/resources/db/changelog/insertScript v1.sql
+        relativeToChangelogFile: true
+        splitStatements: true
+        stripComments: true
