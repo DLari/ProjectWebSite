@@ -9,7 +9,7 @@ public class ColorDTO {
     private BigDecimal price;
     private Boolean removed;
 
-    public Integer getId() {
+  /*  public Integer getId() {
         return id;
     }
 
@@ -39,5 +39,5 @@ public class ColorDTO {
 
    public void setRemoved(Boolean removed) {
         this.removed = removed;
-    }
+    }*/
 }

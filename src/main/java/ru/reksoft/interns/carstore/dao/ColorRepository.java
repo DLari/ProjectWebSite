@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @Repository
 public interface ColorRepository extends CrudRepository<Color, Long>,CustomizedColor<Color>{
-    Optional<Color> findByFirstName(String firtsName);
+//    Optional<Color> findByFirstName(String firtsName);
 
    // Collection<Color> findByFirstName(String name);
 
@@ -21,4 +21,5 @@ public interface ColorRepository extends CrudRepository<Color, Long>,CustomizedC
     List<Color> findColorWithMoreThanPrice(@Param("price") Long salary, Sort sort);
 
 
+//    Color findOne(Long id);
 }

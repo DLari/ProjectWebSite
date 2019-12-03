@@ -1,29 +1,24 @@
-<changeSet id="1" author="Larin">
-    <sqlFile dbms="hsqldb" path="src/main/resources/db/changelog/insertScript v1.sql" />
-</changeSet>
 INSERT INTO COLOR
-VALUES (1, 'Green', 35000, 0), 
-(1, 'Yellow', 35000, 0), 
-(2, 'Black', 42000, 0), 
-(3, 'Red', 42000, 0), 
-(4, 'Orange', 45000, 0);
+VALUES (1, 'Green', 35000, false ),
+(2, 'Yellow', 35000, false),
+(3, 'Black', 42000, false),
+(4, 'Red', 42000, false),
+(5, 'Orange', 45000, false);
 
-INSERT INTO Engine 
-VALUES (1, '35 TFSI S tronic', 100000, 0, 190, 8,2), 
-(2, '45 TFSI S tronic', 250000, 0, 249, 7,4), 
-(3, '55 TFSI quattro tiptronic', 700000, 0, 333, 9,5), 
-(4, '55 TFSI quattro tiptronic', 100000, 0, 340, 8,2), 
-(5, 'Design 45 TFSI quattro S tronic', 655000, 0, 245, 6); 
+-- INSERT INTO Engine
+-- VALUES (1, '40 TDI quattro',350000,false,8,190),
+-- (2, '45 TFSI S tronic',450000,false,6,249),
+-- (3, '55 TFSI quattro',150000,false,8,250),
+-- (4, 'Advance 45 TDI quattro',550000,false,5,270);
 
-
-INSERT INTO DictOrderStatus 
-VALUES (1, 'in the process'), 
-(2, 'confirmed'), 
-(3, 'paid'), 
-(4, 'delivered'); 
+-- INSERT INTO DictOrderStatus
+-- VALUES (1, 'intheprocess'),
+-- (2, 'confirmed'),
+-- (3, 'paid'),
+-- (4, 'delivered');
 
 
-INSERT INTO DictCarcass 
+INSERT INTO dict_carcass
 VALUES (1, 'Sedan'), 
 (2, 'Coupe'), 
 (3, 'Sportback'), 

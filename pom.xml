@@ -27,10 +27,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jersey</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-security</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -69,21 +69,30 @@
 
 
 
+       <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.25</version>
+       </dependency>
 <!--        <dependency>-->
-<!--            <groupId>org.yaml</groupId>-->
-<!--            <artifactId>snakeyaml</artifactId>-->
-<!--            <version>1.11</version>-->
+<!--            <groupId>org.liquibase</groupId>-->
+<!--            <artifactId>liquibase-core</artifactId>-->
+<!--            <version>3.4.1</version>-->
 <!--        </dependency>-->
-        <dependency>
-            <groupId>org.liquibase</groupId>
-            <artifactId>liquibase-core</artifactId>
-            <version>3.4.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.liquibase</groupId>
-            <artifactId>liquibase-maven-plugin</artifactId>
-            <version>3.4.1</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.liquibase</groupId>-->
+<!--            <artifactId>liquibase-maven-plugin</artifactId>-->
+<!--&lt;!&ndash;            <configuration>&ndash;&gt;-->
+<!--&lt;!&ndash;                <changeLogFile>&ndash;&gt;-->
+<!--&lt;!&ndash;                    ${basedir}/src/main/liquibase/master.xml&ndash;&gt;-->
+<!--&lt;!&ndash;                </changeLogFile>&ndash;&gt;-->
+<!--&lt;!&ndash;                <driver>com.mysql.jdbc.Driver</driver>&ndash;&gt;-->
+<!--&lt;!&ndash;                <url>jdbc:mysql://${mysql.host}:${mysql.port}/${mysql.db}</url>&ndash;&gt;-->
+<!--&lt;!&ndash;                <username>${mysql.login}</username>&ndash;&gt;-->
+<!--&lt;!&ndash;                <password>${mysql.password}</password>&ndash;&gt;-->
+<!--&lt;!&ndash;            </configuration>&ndash;&gt;-->
+<!--            <version>3.4.1</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>io.springfox</groupId>
@@ -91,9 +100,22 @@
             <version>2.9.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>2.3.2</version>
+        </dependency>
 
-
-
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>2.3.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>1.2.0.Final</version>
+        </dependency>
 
 
 
@@ -105,26 +127,71 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+<!--
 
-
-
+-->
 <!--            <plugin>-->
-<!--                <groupid>org.apache.maven.plugins</groupid>-->
-<!--                <artifactid>maven-compiler-plugin</artifactid>-->
-<!--                <version>2.3.1</version>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
 <!--                <configuration>-->
-<!--                    <source>1.7</source>-->
-<!--                    <target>1.7</target>-->
+<!--                    <source>${java.version}</source>-->
+<!--                    <target>${java.version}</target>-->
+<!--                    <annotationProcessorPaths>-->
+<!--                        <path>-->
+<!--                            <groupId>org.projectlombok</groupId>-->
+<!--                            <artifactId>lombok</artifactId>-->
+<!--                            <version>1.18.8</version>-->
+<!--                        </path>-->
+<!--                        <path>-->
+<!--                            <groupId>org.mapstruct</groupId>-->
+<!--                            <artifactId>mapstruct-processor</artifactId>-->
+<!--                            <version>1.2</version>-->
+<!--                        </path>-->
+<!--                    </annotationProcessorPaths>-->
 <!--                </configuration>-->
 <!--            </plugin>-->
-            <plugin>
-                <groupId>org.liquibase</groupId>
-                <artifactId>liquibase-maven-plugin</artifactId>
-                <version>3.4.1</version>
-                <configuration>
-                    <propertyFile>src/main/resources/liquibase.properties</propertyFile>
+
+
+
+
+
+
+
+
+
+
+
+
+            <!--  <plugin>
+                <groupid>org.apache.maven.plugins</groupid>
+               <artifactid>maven-compiler-plugin</artifactid>
+               <version>2.3.1</version>
+               <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
                 </configuration>
-            </plugin>
+            </plugin>-->
+<!--            <plugin>-->
+
+
+<!--                <groupId>org.liquibase</groupId>-->
+<!--                <artifactId>liquibase-maven-plugin</artifactId>-->
+<!--                <version>3.4.1</version>-->
+<!--                <configuration>-->
+<!--&lt;!&ndash;                    <changeLogFile>&ndash;&gt;-->
+<!--&lt;!&ndash;                        db/changelog/db.changelog-master.yaml&ndash;&gt;-->
+<!--&lt;!&ndash;                    </changeLogFile>&ndash;&gt;-->
+<!--                 <propertyFile>src/main/resources/liquibase.properties</propertyFile>-->
+<!--&lt;!&ndash;                    <driver>org.postgresql.Driver</driver>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <url>jdbc:postgresql://localhost:5432/carstore</url>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <username>postgres</username>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <password>champioN12</password>&ndash;&gt;-->
+<!--                </configuration>-->
+<!--            </plugin>-->
 
 
 

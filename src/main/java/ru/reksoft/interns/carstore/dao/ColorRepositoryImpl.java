@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.Optional;
 
 
-public class ColorRepositoryImpl implements ColorRepository {
-    private static List<ColorDTO> colors= new ArrayList<>();
-    static {
+//public class ColorRepositoryImpl implements ColorRepository {
+   // private static List<ColorDTO> colors= new ArrayList<>();
+  /*  static {
 
         BigDecimal bd = new BigDecimal(40000);
 
@@ -32,9 +32,9 @@ public class ColorRepositoryImpl implements ColorRepository {
         colorDTO.setRemoved(false);
 
         colors.add(colorDTO);
-    }
+    }*/
 
-    @Override
+ /*   @Override
     public Optional<Color> findByFirstName(String firtsName) {
         return Optional.empty();
     }
@@ -102,5 +102,5 @@ public class ColorRepositoryImpl implements ColorRepository {
     @Override
     public List<Color> getColorListWithMaxPrice() {
         return null;
-    }
-}
+    }*/
+//}
