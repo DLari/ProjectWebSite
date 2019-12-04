@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface CustomizedColor<T> {
    // List <T>getColorListWithMaxPrice();
-    Color getById(Long id);
+    //Color getById(Long id);
 }

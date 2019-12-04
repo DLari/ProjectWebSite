@@ -10,10 +10,10 @@ public class CustomizedColorImpl implements CustomizedColor {
     @PersistenceContext
     private EntityManager em;
 
-    @Override
-    public Color getById(Long id) {
-        return null;
-    }
+//    @Override
+//    public Color getById(Long id) {
+//        return null;
+//    }
 
    /* @Override
     public List getColorListWithMaxPrice() {

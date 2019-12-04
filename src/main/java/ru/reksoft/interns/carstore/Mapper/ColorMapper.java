@@ -7,24 +7,50 @@ import ru.reksoft.interns.carstore.dto.ColorDTO;
 import ru.reksoft.interns.carstore.entity.Color;
 
 import java.util.Objects;
+import java.util.Optional;
 
 @Component
 public class ColorMapper {
 
     @Autowired
-    private ModelMapper mapper;
+    private ModelMapper modelMapper;
+   //  ModelMapper modelMapper= new ModelMapper();
 
 
    // @Override
     public Color toEntity(ColorDTO dto) {
-        return Objects.isNull(dto) ? null : mapper.map(dto, Color.class);
+        return
+                //Objects.isNull(dto) ? null :
+                modelMapper.map(dto, Color.class);
     }
 
 
 
-   // @Override
     public ColorDTO toDto(Color entity) {
-        return Objects.isNull(entity) ? null : mapper.map(entity, ColorDTO.class);
+        return Objects.isNull(entity) ? null : modelMapper.map(entity, ColorDTO.class);
     }
+
+
+
+//    public Color toEntity(ColorDTO dto) {
+//        return new Color(
+//                dto.getId();
+//                dto.getName();
+//                dto.getPrice();
+//                dto.getRemoved();
+//    }
+
+//    public ColorDTO toDtoOptionalSelf(Color item) {
+//        return new ColorDTO(
+//                item.getId(),
+//                item.getName(),
+//                item.getPrice(),
+//                item.getRemoved()
+//        );
+//    }
+
+  //  @Override
+
+
 
 }

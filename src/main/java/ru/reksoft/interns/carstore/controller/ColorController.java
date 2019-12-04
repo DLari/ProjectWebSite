@@ -9,6 +9,7 @@ import ru.reksoft.interns.carstore.dto.ColorDTO;
 import ru.reksoft.interns.carstore.entity.Color;
 import ru.reksoft.interns.carstore.service.ColorService;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -18,18 +19,34 @@ public final class ColorController{
     @Autowired
     private ModelMapper modelMapper;
 
+   // ModelMapper modelMapper=new ModelMapper();
+
     @Autowired
     private  ColorDTO colorDTO;
 
     @Autowired
     private ColorService colorService;
 
-    @GetMapping("/{id}")
-    public ColorDTO read(@PathVariable long id){
-        if(id==0)
-            throw new IdNotFoundException();
-      return colorService.get(id);
+    @GetMapping("/{name}")
+    public ColorDTO getColor(@PathVariable("name") String name) {
+        return colorService.getColor(name);
     }
+
+
+    @GetMapping("/all")
+    public List<ColorDTO> read(){
+//        if(id==0)
+//            throw new IdNotFoundException();
+      return colorService.findColorAll();
+    }
+
+
+//    @GetMapping("/{id}")
+//    public Optional<ColorDTO> read(@PathVariable Long id){
+//        if(id==0)
+//            throw new IdNotFoundException();
+//      return colorService.findColorOnId(id);
+//    }
 
 
 

@@ -5,6 +5,11 @@ import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import ru.reksoft.interns.carstore.dto.ColorDTO;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import static org.modelmapper.config.Configuration.AccessLevel.PRIVATE;
 
@@ -17,6 +22,16 @@ public class BeenConfig {
 //    }
 
 
+        @Bean
+        public Docket api() {
+            return new Docket(DocumentationType.SWAGGER_2)
+                    .select()
+                    .apis(RequestHandlerSelectors.any())
+                    .paths(PathSelectors.any())
+                    .build();
+        }
+
+
     @Bean
     public ColorDTO colorDTO() {
         return new ColorDTO();
@@ -25,11 +40,11 @@ public class BeenConfig {
     @Bean
     public ModelMapper modelMapper() {
         ModelMapper mapper = new ModelMapper();
-        mapper.getConfiguration()
-                .setMatchingStrategy(MatchingStrategies.STRICT)
-                .setFieldMatchingEnabled(true)
-                .setSkipNullEnabled(true)
-                .setFieldAccessLevel(PRIVATE);
+//        mapper.getConfiguration()
+//                .setMatchingStrategy(MatchingStrategies.STRICT)
+//                .setFieldMatchingEnabled(true)
+//                .setSkipNullEnabled(true)
+//                .setFieldAccessLevel(PRIVATE);
         return mapper;
     }
 

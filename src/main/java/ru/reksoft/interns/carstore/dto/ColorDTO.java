@@ -1,7 +1,13 @@
 package ru.reksoft.interns.carstore.dto;
 
-import java.math.BigDecimal;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Data
 public class ColorDTO {
 
     private Integer id;
@@ -9,7 +15,14 @@ public class ColorDTO {
     private BigDecimal price;
     private Boolean removed;
 
-  /*  public Integer getId() {
+//    public ColorDTO(Integer id, String name, BigDecimal price, Boolean removed){
+//        this.id=id;
+//        this.name=name;
+//        this.price=price;
+//        this.removed=removed;
+//    }
+
+    public Integer getId() {
         return id;
     }
 
@@ -20,24 +33,24 @@ public class ColorDTO {
     public void setName(String name) {
         this.name = name;
     }
-
+//
     public String getName() {
         return name;
     }
-
+//
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
-
+//
     public BigDecimal getPrice() {
         return price;
     }
-
+//
     public Boolean getRemoved() {
         return removed;
     }
-
+//
    public void setRemoved(Boolean removed) {
         this.removed = removed;
-    }*/
+    }
 }
