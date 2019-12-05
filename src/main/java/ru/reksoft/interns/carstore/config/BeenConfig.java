@@ -5,6 +5,7 @@ import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import ru.reksoft.interns.carstore.dto.ColorDTO;
+import ru.reksoft.interns.carstore.dto.DictCarcassDto;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
@@ -31,6 +32,11 @@ public class BeenConfig {
                     .build();
         }
 
+
+    @Bean
+    public DictCarcassDto dictCarcassDto() {
+        return new DictCarcassDto();
+    }
 
     @Bean
     public ColorDTO colorDTO() {

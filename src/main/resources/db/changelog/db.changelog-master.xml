@@ -8,10 +8,24 @@ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
 http://www.liquibase.org/xml/ns/dbchangelog
 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
 
+    <changeSet author="larin" id="1">
+        <sqlFile dbms="postgresql"
+                 path="/scrypt_v1.1.sql"
+                 relativeToChangelogFile="true"/>
+    </changeSet>
+
     <changeSet author="larin" id="6">
         <sqlFile dbms="postgresql"
                  path="/insertScript v1.sql"
                  relativeToChangelogFile="true"/>
     </changeSet>
 
+    <changeSet author="larin" id="7">
+        <sqlFile dbms="postgresql"
+                 path="/insertScript v2.sql"
+                 relativeToChangelogFile="true"/>
+    </changeSet>
+
 </databaseChangeLog>
+
+
