@@ -5,6 +5,7 @@ import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import ru.reksoft.interns.carstore.dto.*;
+import ru.reksoft.interns.carstore.entity.Users;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
@@ -60,6 +61,16 @@ public class BeenConfig {
     @Bean
     public AutoInStockDto autoInStockDto() {
         return new AutoInStockDto();
+    }
+
+    @Bean
+    public UsersDto usersDto() {
+        return new UsersDto();
+    }
+
+    @Bean
+    public OrdersDto ordersDto() {
+        return new OrdersDto();
     }
 
     @Bean

@@ -6,18 +6,47 @@ import ru.reksoft.interns.carstore.entity.Color;
 import ru.reksoft.interns.carstore.entity.Engine;
 import ru.reksoft.interns.carstore.entity.Model;
 
-@Setter
-@Getter
+import java.math.BigDecimal;
+
 public class AutoInStockDto {
 
+    @Setter
+    @Getter
     private Integer id;
 
+    @Setter
+    @Getter
     private Integer presence;
 
-    private Color color;
+    @Setter
+    @Getter
+    private String colorName;
 
-    private Engine engine ;
+    @Setter
+    @Getter
+    private BigDecimal colorPrice;
 
-    private Model model;
+    @Setter
+    @Getter
+    private String engineName;
 
+    @Setter
+    @Getter
+    private BigDecimal enginePrice;
+
+//    @Setter
+//    @Getter
+//    private Integer engineFuel_Consumption;
+//
+//    @Setter
+//    @Getter
+//    private Integer enginePower;
+
+    @Setter
+    @Getter
+    private String modelName;
+
+    @Setter
+    @Getter
+    private BigDecimal modelPrice;
 }

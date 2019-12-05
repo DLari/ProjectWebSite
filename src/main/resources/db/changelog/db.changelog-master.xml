@@ -38,6 +38,12 @@ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
                  relativeToChangelogFile="true"/>
     </changeSet>
 
+    <changeSet author="larin" id="10">
+        <sqlFile dbms="postgresql"
+                 path="/insertScript v5.sql"
+                 relativeToChangelogFile="true"/>
+    </changeSet>
+
 </databaseChangeLog>
 
 
