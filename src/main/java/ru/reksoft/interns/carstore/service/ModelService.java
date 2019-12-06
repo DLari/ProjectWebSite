@@ -19,6 +19,9 @@ public class ModelService {
     @Autowired
     private ModelMapperr modelMapper;
 
+//    @Autowired
+//    private ModelRepositoryTest modelRepositoryTest;
+
     public ModelDto getModel(Integer id) {
 //        if (color == null) {
 //            throw new NotFoundException(id);
@@ -32,5 +35,9 @@ public class ModelService {
 //        }
         return modelRepository.findAll().stream().map(modelMapper::toDto).collect(Collectors.toList());
     }
+
+//    public List<ModelDto> getByCarcass(Integer carcassId){
+//        return modelRepositoryTest.findAllAutoWithCarcass(name).stream().map(modelMapper::toDto).collect(Collectors.toList());
+//    }
 
 }

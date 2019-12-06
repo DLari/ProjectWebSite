@@ -13,9 +13,6 @@ import java.util.List;
 @Table(name="auto_in_stock")
 public class AutoInStock {
 
-    @OneToMany(mappedBy = "autoInStock")
-    private List<Orders> orders;
-
     @ManyToOne
     @JoinColumn(name = "color_id")
     private Color color;

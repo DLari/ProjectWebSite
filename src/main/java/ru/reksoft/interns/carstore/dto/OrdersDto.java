@@ -13,11 +13,11 @@ import java.util.Date;
 @Getter
 public class OrdersDto {
 
-    private AutoInStock autoInStock;
+    private AutoInStockDto autoInStock;
 
-    private DictOrderStatus dictOrderStatus;
+    private DictOrderStatusDto dictOrderStatus;
 
-    private Users users;
+    private UsersDto users;
 
     private Integer id;
 

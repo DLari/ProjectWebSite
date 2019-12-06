@@ -28,9 +28,14 @@ public final class ColorController{
     private ColorService colorService;
 
     @GetMapping("/{name}")
-    public ColorDTO getColor(@PathVariable("name") String name) {
-        return colorService.getColor(name);
+    public ColorDTO getColorByName(@PathVariable("name") String name) {
+        return colorService.getColorByName(name);
     }
+
+//    @GetMapping("/{id}")
+//    public ColorDTO getById(@PathVariable("id") Integer id){
+//        return colorService.getById(id);
+//    }
 
 
     @GetMapping("/all")

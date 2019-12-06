@@ -38,4 +38,9 @@ public class ModelController {
         return modelService.findModelAll();
     }
 
+//    @GetMapping("/{carcassId}")
+//    public List<ModelDto> getDictCarcass(@PathVariable Integer carcassId) {
+//        return modelService.getByCarcass(carcassId);
+//    }
+
 }

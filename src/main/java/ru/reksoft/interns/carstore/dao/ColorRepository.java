@@ -17,6 +17,7 @@ import java.util.Optional;
 @Repository
 public interface ColorRepository extends JpaRepository<Color, Long> {
     Color findByName (String name);
+    Color getById(Integer id);
 
         //,CustomizedColor<Color>{
 //    Optional<Color> findByFirstName(String firtsName);

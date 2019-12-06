@@ -11,8 +11,6 @@ import java.util.List;
 @Getter
 public class UsersDto {
 
-    private List<Orders> orders;
-
     private Integer id;
 
     private String fio;

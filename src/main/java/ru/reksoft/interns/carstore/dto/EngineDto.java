@@ -16,12 +16,12 @@ public class EngineDto {
 
     private BigDecimal price;
 
-    private Boolean removed;
+   // private Boolean removed;
 
     private Integer power;
 
     private Integer fuelConsumption;
 
-   // private  Model model;
+    private  ModelDto model;
 
 }

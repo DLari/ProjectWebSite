@@ -23,25 +23,13 @@ public class ModelDto {
     @Getter
     private BigDecimal price;
 
-    @Setter
-    @Getter
-    private String widthCarcass;
-
-    @Setter
-    @Getter
-    private String lenghtCarcass;
-
     private Boolean removed;
 
     @Setter
     @Getter
     private String carcassName;
 
-
-    private List<AutoInStock> autoInStocks;
-
-    private List<Engine> engines;
-
-
-
+    @Setter
+    @Getter
+    private DictCarcassDto dictCarcass;
 }

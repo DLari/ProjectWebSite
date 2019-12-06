@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.reksoft.interns.carstore.Mapper.AutoInStockMapper;
 import ru.reksoft.interns.carstore.dao.AutoInStockRepository;
-import ru.reksoft.interns.carstore.dao.EngineRepository;
 import ru.reksoft.interns.carstore.dto.AutoInStockDto;
 
 import java.util.List;
@@ -27,11 +26,10 @@ public class AutoInStockService {
         return autoInStockMapper.toDto(autoInStockRepository.getById(id));
     }
 
-    public List<AutoInStockDto> findAutoeAll() {
+    public List<AutoInStockDto> findAutoAll() {
 //        if (color == null) {
 //            throw new NotFoundException(id);
 //        }
         return autoInStockRepository.findAll().stream().map(autoInStockMapper::toDto).collect(Collectors.toList());
     }
-
-}
+    }

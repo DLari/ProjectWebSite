@@ -1,6 +1,8 @@
 package ru.reksoft.interns.carstore.controller;
 
 
+import org.hibernate.Criteria;
+import org.hibernate.Session;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.reksoft.interns.carstore.dto.AutoInStockDto;
+import ru.reksoft.interns.carstore.entity.AutoInStock;
 import ru.reksoft.interns.carstore.service.AutoInStockService;
 
 import java.util.List;
@@ -35,7 +38,7 @@ public class AutoInStockController {
     public List<AutoInStockDto> read(){
 //        if(id==0)
 //            throw new IdNotFoundException();
-        return autoInStockService.findAutoeAll();
+        return autoInStockService.findAutoAll();
     }
 
 }

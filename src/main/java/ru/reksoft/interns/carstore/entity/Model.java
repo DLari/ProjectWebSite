@@ -14,16 +14,6 @@ import java.util.Set;
 @Table(name="model")
 public class Model {
 
-  /*  @ManyToOne
-    @JoinColumn(name = "auto_in_stock")
-    private AutoInStock autoInStock;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "model")
-    private Set<Engine> engines = new HashSet<>();
-
-    @OneToMany( cascade = CascadeType.ALL, mappedBy = "model")
-    private Set<DictCarcass> dictCarcasses = new HashSet<>();*/
-
     @OneToMany(mappedBy = "model")
     private List<AutoInStock> autoInStocks;
 
