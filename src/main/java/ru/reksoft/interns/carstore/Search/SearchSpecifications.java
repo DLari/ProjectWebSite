@@ -78,7 +78,7 @@ public static Specification<AutoInStock> findColorId(Integer id) {
                 } else {
                     return cb.equal(root.get(AutoInStock_.engine).get(Engine_.id), id);
                 }
-            };
+            }
         };
     }
     public static Specification<AutoInStock> findCarcassId(Integer id) {
@@ -93,4 +93,5 @@ public static Specification<AutoInStock> findColorId(Integer id) {
             }
         };
     }
+
 }

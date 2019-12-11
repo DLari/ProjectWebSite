@@ -32,22 +32,20 @@ public class AutoInStockController {
     }
 
 
-    @GetMapping("")
-    public List<AutoInStockDto> read(){
-//        if(id==0)
-//            throw new IdNotFoundException();
-        return autoInStockService.findAutoAll();
-    }
+//    @GetMapping("")
+//    public List<AutoInStockDto> read(){
+////        if(id==0)
+////            throw new IdNotFoundException();
+//        return autoInStockService.findAutoAll();
+//    }
 
     @RequestMapping(method = RequestMethod.GET, value = "search")
     @ResponseBody
-    public List<AutoInStockDto> searchCars(@RequestParam(required = false) Integer modelId,
-                                           @RequestParam (required = false)Integer colorId,
-                                           @RequestParam  (required = false)Integer carcassId,
-                                           @RequestParam  (required = false)Integer engineId
-                                           //     @RequestParam (required = false)BigDecimal modelPrice,
-    ) {
+    public List<AutoInStockDto> searchCars(@RequestParam(name = "model", required = false) Integer modelId,
+                                           @RequestParam (name = "color", required = false) Integer colorId,
+                                           @RequestParam  (name = "carcass", required = false) Integer carcassId,
+                                           @RequestParam  (name = "engine", required = false) Integer engineId) {
         return autoInStockService.search(modelId,colorId,carcassId,engineId);
     }
-
+    //     @RequestParam (required = false)BigDecimal modelPrice,
 }

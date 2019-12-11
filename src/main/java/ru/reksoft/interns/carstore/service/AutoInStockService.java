@@ -36,7 +36,7 @@ public class AutoInStockService {
         return autoInStockRepository.findAll().stream().map(autoInStockMapper::toDto).collect(Collectors.toList());
     }
 
-    public List<AutoInStockDto> search(Integer modelId,Integer colorId,Integer carcassId,Integer engineId) {
+    public List<AutoInStockDto> search(Integer modelId, Integer colorId, Integer carcassId, Integer engineId) {
         return  autoInStockRepository.findAll( SearchSpecifications.findModelId(modelId)
                 .and(SearchSpecifications.findColorId(colorId))
                 .and(SearchSpecifications.findCarcassId(carcassId))
