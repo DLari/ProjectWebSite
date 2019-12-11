@@ -20,9 +20,6 @@ public class DictCarcassController {
     private ModelMapper modelMapper;
 
     @Autowired
-    private DictCarcassDto dictCarcassDto;
-
-    @Autowired
     private DictCarcassService dictCarcassService;
 
     @GetMapping("/{id}")

@@ -18,9 +18,6 @@ public class OrdersController {
     private ModelMapper modelMapper;
 
     @Autowired
-    private OrdersDto ordersDto;
-
-    @Autowired
     private OrdersService ordersService;
 
     @GetMapping("/{id}")

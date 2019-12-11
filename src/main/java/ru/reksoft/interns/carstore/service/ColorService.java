@@ -28,14 +28,6 @@ public class ColorService {
 //            throw new NotFoundException(id);
 //        }
         return colorRepository.findAll().stream().map(colorMapper::toDto).collect(Collectors.toList());
-         //colorMapper.toDto(colorRepository.findAll());
     }
-
-//    public List<ColorDTO> search(String name) {
-//        return colorRepository.findAll(SearchSpecifications.colorName(name))
-//                .stream().map(colorMapper::toDto).collect(Collectors.toList());
-//    }
-
-
 
 }

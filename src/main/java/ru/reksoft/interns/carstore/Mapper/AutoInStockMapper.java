@@ -19,8 +19,6 @@ public class AutoInStockMapper {
         return Objects.isNull(dto) ? null : modelMapper.map(dto, AutoInStock.class);
     }
 
-
-
     public AutoInStockDto toDto(AutoInStock entity) {
         return Objects.isNull(entity) ? null : modelMapper.map(entity, AutoInStockDto.class);
     }

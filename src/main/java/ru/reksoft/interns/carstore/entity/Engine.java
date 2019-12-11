@@ -13,23 +13,11 @@ import java.util.List;
 @Table( name="engine")
 public class Engine {
 
-  /*  @ManyToOne
-    @JoinColumn(name = "auto_in_stock_id")
-    private AutoInStock autoInStock;
-
-    @ManyToOne
-    @JoinColumn(name = "model_id")
-    private Model model;*/
-
-   /* @OneToMany(mappedBy = "engine")
-    private List<AutoInStock> autoInStocks;*/
-
     @ManyToOne
     @JoinColumn(name = "model_id")
     private Model model;
 
     @Id
- //   @GeneratedValue
     @Column( name = "id")
     private Integer id;
 
@@ -48,23 +36,23 @@ public class Engine {
     @Column(name = "fuel_сonsumption")
     private Integer fuelConsumption;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public Integer getFuelConsumption() {
-        return fuelConsumption;
-    }
-
-    public Integer getPower() {
-        return power;
-    }
+//    public Integer getId() {
+//        return id;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public BigDecimal getPrice() {
+//        return price;
+//    }
+//
+//    public Integer getFuelConsumption() {
+//        return fuelConsumption;
+//    }
+//
+//    public Integer getPower() {
+//        return power;
+//    }
 }

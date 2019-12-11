@@ -14,14 +14,25 @@ public class EngineMapper {
     @Autowired
     private ModelMapper modelMapper;
 
+    // @Override
     public Engine toEntity(EngineDto dto) {
-        return Objects.isNull(dto) ? null : modelMapper.map(dto, Engine.class);
+        return
+                //Objects.isNull(dto) ? null :
+                modelMapper.map(dto, Engine.class);
     }
-
-
 
     public EngineDto toDto(Engine entity) {
         return Objects.isNull(entity) ? null : modelMapper.map(entity, EngineDto.class);
     }
+
+//    public EngineDto toDto(Engine engine){
+//        return new EngineDto(
+//                engine.getId(),
+//                engine.getName(),
+//                engine.getPrice(),
+//                engine.getFuelConsumption(),
+//                engine.getPower()
+//        );
+//    }
 
 }

@@ -14,8 +14,6 @@ public class ColorMapper {
 
     @Autowired
     private ModelMapper modelMapper;
-   //  ModelMapper modelMapper= new ModelMapper();
-
 
    // @Override
     public Color toEntity(ColorDTO dto) {
@@ -24,33 +22,7 @@ public class ColorMapper {
                 modelMapper.map(dto, Color.class);
     }
 
-
-
     public ColorDTO toDto(Color entity) {
         return Objects.isNull(entity) ? null : modelMapper.map(entity, ColorDTO.class);
     }
-
-
-
-//    public Color toEntity(ColorDTO dto) {
-//        return new Color(
-//                dto.getId();
-//                dto.getName();
-//                dto.getPrice();
-//                dto.getRemoved();
-//    }
-
-//    public ColorDTO toDtoOptionalSelf(Color item) {
-//        return new ColorDTO(
-//                item.getId(),
-//                item.getName(),
-//                item.getPrice(),
-//                item.getRemoved()
-//        );
-//    }
-
-  //  @Override
-
-
-
 }

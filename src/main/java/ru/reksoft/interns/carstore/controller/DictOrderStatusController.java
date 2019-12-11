@@ -20,9 +20,6 @@ public class DictOrderStatusController {
     private ModelMapper modelMapper;
 
     @Autowired
-    private DictOrderStatusDto dictOrderStatusDto;
-
-    @Autowired
     private DictOrderStatusService dictOrderStatusService;
 
     @GetMapping("/{id}")

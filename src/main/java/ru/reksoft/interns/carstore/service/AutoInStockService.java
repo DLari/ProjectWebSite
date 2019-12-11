@@ -46,5 +46,4 @@ public class AutoInStockService {
                 .stream().map(autoInStockMapper::toDto).collect(Collectors.toList());
     }
 
-
 }

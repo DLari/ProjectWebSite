@@ -20,8 +20,6 @@ public class DictCarcassMapper {
         return Objects.isNull(dto) ? null : modelMapper.map(dto, DictCarcass.class);
     }
 
-
-
     public DictCarcassDto toDto(DictCarcass entity) {
         return Objects.isNull(entity) ? null : modelMapper.map(entity, DictCarcassDto.class);
     }

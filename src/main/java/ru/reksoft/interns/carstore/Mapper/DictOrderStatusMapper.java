@@ -14,8 +14,6 @@ public class DictOrderStatusMapper {
 
     @Autowired
     private ModelMapper modelMapper;
-    //  ModelMapper modelMapper= new ModelMapper();
-
 
     // @Override
     public DictOrderStatus toEntity(DictOrderStatusDto dto) {
@@ -23,8 +21,6 @@ public class DictOrderStatusMapper {
                 //Objects.isNull(dto) ? null :
                 modelMapper.map(dto, DictOrderStatus.class);
     }
-
-
 
     public DictOrderStatusDto toDto(DictOrderStatus entity) {
         return Objects.isNull(entity) ? null : modelMapper.map(entity, DictOrderStatusDto.class);

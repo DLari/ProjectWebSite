@@ -20,9 +20,6 @@ public class EngineController {
     private ModelMapper modelMapper;
 
     @Autowired
-    private EngineDto engineDto;
-
-    @Autowired
     private EngineService engineService;
 
     @GetMapping("/{id}")

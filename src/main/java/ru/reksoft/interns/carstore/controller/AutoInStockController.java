@@ -21,9 +21,6 @@ public class AutoInStockController {
     private ModelMapper modelMapper;
 
     @Autowired
-    private AutoInStockDto autoInStockDto;
-
-    @Autowired
     private AutoInStockService autoInStockService;
 
     @GetMapping("/{id}")
@@ -32,12 +29,12 @@ public class AutoInStockController {
     }
 
 
-//    @GetMapping("")
-//    public List<AutoInStockDto> read(){
-////        if(id==0)
-////            throw new IdNotFoundException();
-//        return autoInStockService.findAutoAll();
-//    }
+    @GetMapping("")
+    public List<AutoInStockDto> read(){
+//        if(id==0)
+//            throw new IdNotFoundException();
+        return autoInStockService.findAutoAll();
+    }
 
     @RequestMapping(method = RequestMethod.GET, value = "search")
     @ResponseBody

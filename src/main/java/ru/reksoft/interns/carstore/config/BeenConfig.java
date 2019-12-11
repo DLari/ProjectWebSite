@@ -18,62 +18,6 @@ import static org.modelmapper.config.Configuration.AccessLevel.PRIVATE;
 @Configuration
 public class BeenConfig {
 
-//    @Bean(name="helloBean")
-//    public ModelMapper modelMapper() {
-//        return new ModelMapper();
-//    }
-
-
-        @Bean
-        public Docket api() {
-            return new Docket(DocumentationType.SWAGGER_2)
-                    .select()
-                    .apis(RequestHandlerSelectors.any())
-                    .paths(PathSelectors.any())
-                    .build();
-        }
-
-
-    @Bean
-    public DictCarcassDto dictCarcassDto() {
-        return new DictCarcassDto();
-    }
-
-    @Bean
-    public ColorDTO colorDTO() {
-        return new ColorDTO();
-    }
-
-    @Bean
-    public DictOrderStatusDto dictOrderStatusDto() {
-        return new DictOrderStatusDto();
-    }
-
-    @Bean
-    public ModelDto modelDto() {
-        return new ModelDto();
-    }
-
-    @Bean
-    public EngineDto engineDto() {
-        return new EngineDto();
-    }
-
-    @Bean
-    public AutoInStockDto autoInStockDto() {
-        return new AutoInStockDto();
-    }
-
-    @Bean
-    public UsersDto usersDto() {
-        return new UsersDto();
-    }
-
-    @Bean
-    public OrdersDto ordersDto() {
-        return new OrdersDto();
-    }
-
     @Bean
     public ModelMapper modelMapper() {
         ModelMapper mapper = new ModelMapper();

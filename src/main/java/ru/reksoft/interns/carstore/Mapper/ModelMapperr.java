@@ -18,8 +18,6 @@ public class ModelMapperr {
         return Objects.isNull(dto) ? null : modelMapper.map(dto, Model.class);
     }
 
-
-
     public ModelDto toDto(Model entity) {
         return Objects.isNull(entity) ? null : modelMapper.map(entity, ModelDto.class);
     }

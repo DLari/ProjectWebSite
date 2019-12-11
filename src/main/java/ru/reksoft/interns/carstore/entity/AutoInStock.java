@@ -25,8 +25,6 @@ public class AutoInStock {
     @JoinColumn(name = "model_id")
     private Model model;
 
-
-
     @Id
     //@GeneratedValue
    @Column(name = "id")
@@ -35,37 +33,37 @@ public class AutoInStock {
     @Column(name = "presence")
     private Integer presence;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public Integer getPresence() {
-        return presence;
-    }
-
-    public Model getModel() {
-        return model;
-    }
-
-    public void setModel(Model model) {
-        this.model = model;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setEngine(Engine engine) {
-        this.engine = engine;
-    }
-
-    public Engine getEngine() {
-        return engine;
-    }
+//    public Integer getId() {
+//        return id;
+//    }
+//
+//    public Integer getPresence() {
+//        return presence;
+//    }
+//
+//    public Model getModel() {
+//        return model;
+//    }
+//
+//    public void setModel(Model model) {
+//        this.model = model;
+//    }
+//
+//    public void setColor(Color color) {
+//        this.color = color;
+//    }
+//
+//    public Color getColor() {
+//        return color;
+//    }
+//
+//    public void setEngine(Engine engine) {
+//        this.engine = engine;
+//    }
+//
+//    public Engine getEngine() {
+//        return engine;
+//    }
     /*
 engine_id
 model_id */

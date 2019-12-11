@@ -20,11 +20,6 @@ public final class ColorController{
     @Autowired
     private ModelMapper modelMapper;
 
-   // ModelMapper modelMapper=new ModelMapper();
-
-    @Autowired
-    private  ColorDTO colorDTO;
-
     @Autowired
     private ColorService colorService;
 
@@ -39,13 +34,5 @@ public final class ColorController{
 //            throw new IdNotFoundException();
       return colorService.findColorAll();
     }
-
-//    @RequestMapping(method = RequestMethod.GET, value = "search")
-//    @ResponseBody
-//    public List<ColorDTO> search(@RequestParam(value = "name", required = false) String name) {
-//        return colorService.search(name);
-//    }
-
-
 
 }

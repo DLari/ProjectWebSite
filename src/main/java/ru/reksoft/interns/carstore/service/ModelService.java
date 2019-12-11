@@ -35,17 +35,6 @@ public class ModelService {
         return modelRepository.findAll().stream().map(modelMapper::toDto).collect(Collectors.toList());
     }
 
-
-//    public List<ModelDto> search(String name, BigDecimal price) {
-//        return modelRepository.findAll(ModelSpecifications.isPriceMoreThan(price).and(ModelSpecifications.modelHasName(name)))
-//                .stream().map(modelMapper::toDto).collect(Collectors.toList());
-//    }
-
-//    public List<ModelDto> search(String name) {
-//        return modelRepository.findAll(SearchSpecifications.modelName(name))
-//                .stream().map(modelMapper::toDto).collect(Collectors.toList());
-//    }
-
 }
 
 

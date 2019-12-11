@@ -18,20 +18,7 @@ import java.math.BigDecimal;
 
 public class SearchSpecifications {
 
-    // ?? надо через авто
-//    public static Specification<Model> modelName(String name) {
-//        return new Specification<Model>() {
-//
-//            public Predicate toPredicate(Root<Model> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
-//                return cb.equal(root.get(Model_.name),name);
-//                        //cb.equal(root.get(Model_.NAME), name);
-//            }
-//        };
-//    }
-
-//builder.equal(root.get(AutoInStock_.color).get(Color_id), filter.getColorId());
-
-public static Specification<AutoInStock> findColorId(Integer id) {
+    public static Specification<AutoInStock> findColorId(Integer id) {
     return new Specification<AutoInStock>() {
 
         public Predicate toPredicate(Root<AutoInStock> root, CriteriaQuery<?> query, CriteriaBuilder cb) {

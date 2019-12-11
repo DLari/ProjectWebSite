@@ -20,9 +20,6 @@ public class ModelController {
     private ModelMapper modelMapper;
 
     @Autowired
-    private ModelDto modelDto;
-
-    @Autowired
     private ModelService modelService;
 
     @GetMapping("/{id}")
@@ -37,18 +34,4 @@ public class ModelController {
 //            throw new IdNotFoundException();
         return modelService.findModelAll();
     }
-
-//    @RequestMapping(method = RequestMethod.GET, value = "search")
-//    @ResponseBody
-//    public List<ModelDto> search(@RequestParam(value = "name",required = false) String name, BigDecimal price) {
-//       return modelService.search(name,price);
-//    }
-
-
-//    @RequestMapping(method = RequestMethod.GET, value = "search")
-//    @ResponseBody
-//    public List<ModelDto> search(@RequestParam(value = "name", required = false) String name) {
-//        return modelService.search(name);
-//    }
-
 }

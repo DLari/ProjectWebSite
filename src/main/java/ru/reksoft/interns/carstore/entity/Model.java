@@ -44,41 +44,41 @@ public class Model {
     @Column( name = "removed")
     private Boolean removed;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public String getLenghtCarcass() {
-        return lenghtCarcass;
-    }
-
-    public DictCarcass getDictCarcass() {
-        return dictCarcass;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public void setDictCarcass(DictCarcass dictCarcass) {
-        this.dictCarcass = dictCarcass;
-    }
+//    public Integer getId() {
+//        return id;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public BigDecimal getPrice() {
+//        return price;
+//    }
+//
+//    public String getLenghtCarcass() {
+//        return lenghtCarcass;
+//    }
+//
+//    public DictCarcass getDictCarcass() {
+//        return dictCarcass;
+//    }
+//
+//    public void setId(Integer id) {
+//        this.id = id;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public void setPrice(BigDecimal price) {
+//        this.price = price;
+//    }
+//
+//    public void setDictCarcass(DictCarcass dictCarcass) {
+//        this.dictCarcass = dictCarcass;
+//    }
 
     /* engine_id
 dict_carcass_id*/

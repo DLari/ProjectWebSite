@@ -18,9 +18,6 @@ public class UsersController {
     private ModelMapper modelMapper;
 
     @Autowired
-    private UsersDto usersDto;
-
-    @Autowired
     private UsersService usersService;
 
     @GetMapping("/{id}")
