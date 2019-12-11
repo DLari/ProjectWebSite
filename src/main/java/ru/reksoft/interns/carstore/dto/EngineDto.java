@@ -24,4 +24,43 @@ public class EngineDto {
 
     private  ModelDto model;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public Integer getPower() {
+        return power;
+    }
+
+    public void setPower(Integer power) {
+        this.power = power;
+    }
+
+    public Integer getFuelConsumption() {
+        return fuelConsumption;
+    }
+
+    public void setFuelConsumption(Integer fuelConsumption) {
+        this.fuelConsumption = fuelConsumption;
+    }
 }

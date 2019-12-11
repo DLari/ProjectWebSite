@@ -29,7 +29,7 @@ public class UsersController {
     }
 
 
-    @GetMapping("/all")
+    @GetMapping("")
     public List<UsersDto> read(){
 //        if(id==0)
 //            throw new IdNotFoundException();

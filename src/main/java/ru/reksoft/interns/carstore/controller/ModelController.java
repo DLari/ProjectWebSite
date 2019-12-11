@@ -3,17 +3,17 @@ package ru.reksoft.interns.carstore.controller;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.reksoft.interns.carstore.dto.ModelDto;
+import ru.reksoft.interns.carstore.entity.Model;
 import ru.reksoft.interns.carstore.service.ModelService;
 
+import javax.persistence.metamodel.SingularAttribute;
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
-@RequestMapping("/model")
+@RequestMapping("/models")
 public class ModelController {
 
     @Autowired
@@ -31,16 +31,24 @@ public class ModelController {
     }
 
 
-    @GetMapping("/all")
+    @GetMapping("")
     public List<ModelDto> read(){
 //        if(id==0)
 //            throw new IdNotFoundException();
         return modelService.findModelAll();
     }
 
-//    @GetMapping("/{carcassId}")
-//    public List<ModelDto> getDictCarcass(@PathVariable Integer carcassId) {
-//        return modelService.getByCarcass(carcassId);
+//    @RequestMapping(method = RequestMethod.GET, value = "search")
+//    @ResponseBody
+//    public List<ModelDto> search(@RequestParam(value = "name",required = false) String name, BigDecimal price) {
+//       return modelService.search(name,price);
+//    }
+
+
+//    @RequestMapping(method = RequestMethod.GET, value = "search")
+//    @ResponseBody
+//    public List<ModelDto> search(@RequestParam(value = "name", required = false) String name) {
+//        return modelService.search(name);
 //    }
 
 }

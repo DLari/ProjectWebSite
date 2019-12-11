@@ -29,7 +29,7 @@ public class OrdersController {
     }
 
 
-    @GetMapping("/all")
+    @GetMapping("")
     public List<OrdersDto> read(){
 //        if(id==0)
 //            throw new IdNotFoundException();

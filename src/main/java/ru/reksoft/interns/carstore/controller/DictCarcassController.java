@@ -31,7 +31,7 @@ public class DictCarcassController {
     }
 
 
-    @GetMapping("/all")
+    @GetMapping("")
     public List<DictCarcassDto> read(){
 //        if(id==0)
 //            throw new IdNotFoundException();

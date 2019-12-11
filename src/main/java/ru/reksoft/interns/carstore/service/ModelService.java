@@ -1,14 +1,16 @@
 package ru.reksoft.interns.carstore.service;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.reksoft.interns.carstore.Mapper.ModelMapperr;
+import ru.reksoft.interns.carstore.Search.SearchSpecifications;
 import ru.reksoft.interns.carstore.dao.ModelRepository;
 import ru.reksoft.interns.carstore.dto.ModelDto;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
+
 
 @Service
 public class ModelService {
@@ -18,9 +20,6 @@ public class ModelService {
 
     @Autowired
     private ModelMapperr modelMapper;
-
-//    @Autowired
-//    private ModelRepositoryTest modelRepositoryTest;
 
     public ModelDto getModel(Integer id) {
 //        if (color == null) {
@@ -36,8 +35,20 @@ public class ModelService {
         return modelRepository.findAll().stream().map(modelMapper::toDto).collect(Collectors.toList());
     }
 
-//    public List<ModelDto> getByCarcass(Integer carcassId){
-//        return modelRepositoryTest.findAllAutoWithCarcass(name).stream().map(modelMapper::toDto).collect(Collectors.toList());
+
+//    public List<ModelDto> search(String name, BigDecimal price) {
+//        return modelRepository.findAll(ModelSpecifications.isPriceMoreThan(price).and(ModelSpecifications.modelHasName(name)))
+//                .stream().map(modelMapper::toDto).collect(Collectors.toList());
+//    }
+
+//    public List<ModelDto> search(String name) {
+//        return modelRepository.findAll(SearchSpecifications.modelName(name))
+//                .stream().map(modelMapper::toDto).collect(Collectors.toList());
 //    }
 
 }
+
+
+
+
+

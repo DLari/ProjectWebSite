@@ -38,18 +38,18 @@ public class Color {
     @Column(name = "removed")
     private Boolean removed;
 
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public BigDecimal getPrice() {
-//        return price;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
+    public Integer getId() {
+        return id;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
 //    public Boolean getRemoved() {
 //        return removed;
 //    }

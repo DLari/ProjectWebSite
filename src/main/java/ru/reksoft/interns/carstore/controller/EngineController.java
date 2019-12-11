@@ -13,7 +13,7 @@ import ru.reksoft.interns.carstore.service.EngineService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/engine")
+@RequestMapping("/engines")
 public class EngineController {
 
     @Autowired
@@ -31,7 +31,7 @@ public class EngineController {
     }
 
 
-    @GetMapping("/all")
+    @GetMapping("")
     public List<EngineDto> read(){
 //        if(id==0)
 //            throw new IdNotFoundException();

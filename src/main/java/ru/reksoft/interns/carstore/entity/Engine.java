@@ -48,4 +48,23 @@ public class Engine {
     @Column(name = "fuel_сonsumption")
     private Integer fuelConsumption;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public Integer getFuelConsumption() {
+        return fuelConsumption;
+    }
+
+    public Integer getPower() {
+        return power;
+    }
 }

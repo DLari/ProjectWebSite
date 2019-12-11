@@ -13,7 +13,7 @@ import ru.reksoft.interns.carstore.service.DictOrderStatusService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/orderStatus")
+@RequestMapping("/statuses")
 public class DictOrderStatusController {
 
     @Autowired
@@ -31,7 +31,7 @@ public class DictOrderStatusController {
     }
 
 
-    @GetMapping("/all")
+    @GetMapping("")
     public List<DictOrderStatusDto> read(){
 //        if(id==0)
 //            throw new IdNotFoundException();

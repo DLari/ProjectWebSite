@@ -3,6 +3,7 @@ package ru.reksoft.interns.carstore.dao;
 import com.sun.xml.bind.v2.model.core.ID;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -15,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface ColorRepository extends JpaRepository<Color, Long> {
+public interface ColorRepository extends JpaRepository<Color, Long>, JpaSpecificationExecutor<Color> {
     Color findByName (String name);
     Color getById(Integer id);
 

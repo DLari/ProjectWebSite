@@ -9,11 +9,12 @@ import ru.reksoft.interns.carstore.dto.ColorDTO;
 import ru.reksoft.interns.carstore.entity.Color;
 import ru.reksoft.interns.carstore.service.ColorService;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/color")
+@RequestMapping("/colors")
 public final class ColorController{
 
     @Autowired
@@ -27,49 +28,24 @@ public final class ColorController{
     @Autowired
     private ColorService colorService;
 
-    @GetMapping("/{name}")
-    public ColorDTO getColorByName(@PathVariable("name") String name) {
-        return colorService.getColorByName(name);
+    @GetMapping("/{id}")
+    public ColorDTO getById(@PathVariable("id") Integer id){
+        return colorService.getById(id);
     }
 
-//    @GetMapping("/{id}")
-//    public ColorDTO getById(@PathVariable("id") Integer id){
-//        return colorService.getById(id);
-//    }
-
-
-    @GetMapping("/all")
+    @GetMapping("")
     public List<ColorDTO> read(){
 //        if(id==0)
 //            throw new IdNotFoundException();
       return colorService.findColorAll();
     }
 
-
-//    @GetMapping("/{id}")
-//    public Optional<ColorDTO> read(@PathVariable Long id){
-//        if(id==0)
-//            throw new IdNotFoundException();
-//      return colorService.findColorOnId(id);
+//    @RequestMapping(method = RequestMethod.GET, value = "search")
+//    @ResponseBody
+//    public List<ColorDTO> search(@RequestParam(value = "name", required = false) String name) {
+//        return colorService.search(name);
 //    }
 
-
-
-      /*  @GetMapping("/{id}")
-    public ColorDTO read(@PathVariable long id){
-        if(id==0)
-            throw new IdNotFoundException();
-        Optional<Color> color= colorDaoimpl.findById(id);
-        return color;
-    }*/
- /*   @RequestMapping(value = "/create",
-            method = RequestMethod.POST)
-    @ResponseBody
-    public Color addColor(@RequestBody Color color) {
-
-      //  System.out.println("(Service Side) Creating color: " + colorService.getByFirst());
-        return colorService.save(color);
-    }*/
 
 
 }
