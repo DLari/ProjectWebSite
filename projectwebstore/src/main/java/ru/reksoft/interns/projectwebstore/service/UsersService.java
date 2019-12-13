@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.reksoft.interns.projectwebstore.Mapper.UsersMapper;
 import ru.reksoft.interns.projectwebstore.dao.UsersRepository;
 import ru.reksoft.interns.projectwebstore.dto.UsersDto;
+import ru.reksoft.interns.projectwebstore.entety.Users;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,5 +30,26 @@ public class UsersService {
 //            throw new NotFoundException(id);
 //        }
         return usersRepository.findAll().stream().map(usersMapper::toDto).collect(Collectors.toList());
+    }
+    public Integer create(UsersDto newUser) {
+        Integer id=newUser.getId();
+        usersRepository.saveAndFlush(usersMapper.toEntity(newUser));
+        return id;
+    }
+
+    public Integer update(Integer id, UsersDto usersDto) {
+        Integer reternId=id;
+        Users users= usersRepository.getById(id);
+        //colorRepository.saveAndFlush(colorMapper.toEntity(colorDTO));
+
+
+
+        users.setFio(usersDto.getFio());
+        users.setLogin(usersDto.getLogin());
+        users.setDateOfBirth(usersDto.getDateOfBirth());
+        users.setPassword(usersDto.getPassword());
+        users.setRule(usersDto.getRule());
+        usersRepository.saveAndFlush(users);
+        return reternId;
     }
 }

@@ -44,42 +44,75 @@ public class Model {
     @Column( name = "removed")
     private Boolean removed;
 
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public BigDecimal getPrice() {
-//        return price;
-//    }
-//
-//    public String getLenghtCarcass() {
-//        return lenghtCarcass;
-//    }
-//
-//    public DictCarcass getDictCarcass() {
-//        return dictCarcass;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    public void setPrice(BigDecimal price) {
-//        this.price = price;
-//    }
-//
-//    public void setDictCarcass(DictCarcass dictCarcass) {
-//        this.dictCarcass = dictCarcass;
-//    }
+    public List<AutoInStock> getAutoInStocks() {
+        return autoInStocks;
+    }
 
-    /* engine_id
-dict_carcass_id*/
+    public void setAutoInStocks(List<AutoInStock> autoInStocks) {
+        this.autoInStocks = autoInStocks;
+    }
+
+    public DictCarcass getDictCarcass() {
+        return dictCarcass;
+    }
+
+    public void setDictCarcass(DictCarcass dictCarcass) {
+        this.dictCarcass = dictCarcass;
+    }
+
+    public List<Engine> getEngines() {
+        return engines;
+    }
+
+    public void setEngines(List<Engine> engines) {
+        this.engines = engines;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public String getWidthCarcass() {
+        return widthCarcass;
+    }
+
+    public void setWidthCarcass(String widthCarcass) {
+        this.widthCarcass = widthCarcass;
+    }
+
+    public String getLenghtCarcass() {
+        return lenghtCarcass;
+    }
+
+    public void setLenghtCarcass(String lenghtCarcass) {
+        this.lenghtCarcass = lenghtCarcass;
+    }
+
+    public Boolean getRemoved() {
+        return removed;
+    }
+
+    public void setRemoved(Boolean removed) {
+        this.removed = removed;
+    }
 }

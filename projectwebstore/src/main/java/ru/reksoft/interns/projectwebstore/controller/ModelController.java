@@ -3,10 +3,7 @@ package ru.reksoft.interns.projectwebstore.controller;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.reksoft.interns.projectwebstore.dto.ModelDto;
 import ru.reksoft.interns.projectwebstore.service.ModelService;
 
@@ -33,5 +30,21 @@ public class ModelController {
 //        if(id==0)
 //            throw new IdNotFoundException();
         return modelService.findModelAll();
+    }
+    @PostMapping("")
+    public Integer create(@RequestBody ModelDto newModel) {
+        Integer id= modelService.create(newModel);
+        return id;
+    }
+
+    @PutMapping(value = "/{id}")
+    public Integer update(@PathVariable Integer id, @RequestBody ModelDto modelDto) {
+        Integer updateId= modelService.update(id, modelDto);
+        return updateId;
+    }
+
+    @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
+    public void delete(@PathVariable Integer id) {
+        modelService.delete(id);
     }
 }

@@ -2,10 +2,7 @@ package ru.reksoft.interns.projectwebstore.controller;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.reksoft.interns.projectwebstore.dto.UsersDto;
 import ru.reksoft.interns.projectwebstore.service.UsersService;
 
@@ -31,5 +28,17 @@ public class UsersController {
 //        if(id==0)
 //            throw new IdNotFoundException();
         return usersService.findUsersAll();
+    }
+
+    @PostMapping("")
+    public Integer create(@RequestBody UsersDto newUser) {
+        Integer id= usersService.create(newUser);
+        return id;
+    }
+
+    @PutMapping(value = "/{id}")
+    public Integer update(@PathVariable Integer id, @RequestBody UsersDto usersDto) {
+        Integer updateId= usersService.update(id, usersDto);
+        return updateId;
     }
 }

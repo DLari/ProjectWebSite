@@ -68,4 +68,33 @@ public class SearchSpecifications {
         };
     }
 
+    public static Specification<Color> findAllNotRemovedColor() {
+        return new Specification<Color>() {
+
+            public Predicate toPredicate(Root<Color> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+
+                return cb.isFalse(root.get(Color_.removed));
+            }
+        };
+    }
+
+    public static Specification<Engine> findAllNotRemovedEngine() {
+        return new Specification<Engine>() {
+
+            public Predicate toPredicate(Root<Engine> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+
+                return cb.isFalse(root.get(Engine_.removed));
+            }
+        };
+    }
+
+    public static Specification<Model> findAllNotRemovedModel() {
+        return new Specification<Model>() {
+
+            public Predicate toPredicate(Root<Model> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+
+                return cb.isFalse(root.get(Model_.removed));
+            }
+        };
+    }
 }

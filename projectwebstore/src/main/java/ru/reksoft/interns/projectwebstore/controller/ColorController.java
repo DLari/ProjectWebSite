@@ -43,9 +43,9 @@ public final class ColorController{
     }
 
     @PutMapping(value = "/{id}")
-    public Integer update(@RequestBody ColorDTO colorDto) {
-        Integer newId= colorService.update(colorDto);
-        return newId;
+    public Integer update(@PathVariable Integer id, @RequestBody ColorDTO colorDto) {
+        Integer updateId= colorService.update(id, colorDto);
+        return updateId;
     }
 
     @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
