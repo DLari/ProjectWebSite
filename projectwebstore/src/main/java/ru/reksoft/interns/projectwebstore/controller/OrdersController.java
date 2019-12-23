@@ -3,13 +3,12 @@ package ru.reksoft.interns.projectwebstore.controller;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.domain.jaxb.SpringDataJaxb;
+import org.springframework.web.bind.annotation.*;
 import ru.reksoft.interns.projectwebstore.dto.OrdersDto;
 import ru.reksoft.interns.projectwebstore.service.OrdersService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -32,5 +31,21 @@ public class OrdersController {
 //        if(id==0)
 //            throw new IdNotFoundException();
         return ordersService.findUsers();
+    }
+
+    @PostMapping("")
+    public Integer create(@RequestBody @Valid OrdersDto newOrder) {
+        Integer id= ordersService.create(newOrder);
+        return id;
+    }
+//    @PutMapping(value = "/{id}")
+//    public Integer update(@PathVariable Integer id, @RequestBody OrdersDto ordersDto) {
+//        Integer updateId= ordersService.update(id, ordersDto);
+//        return updateId;
+//    }
+
+    @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
+    public void delete(@PathVariable Integer id) {
+        ordersService.delete(id);
     }
 }

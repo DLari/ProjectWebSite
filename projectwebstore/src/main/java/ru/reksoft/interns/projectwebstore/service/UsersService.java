@@ -2,7 +2,7 @@ package ru.reksoft.interns.projectwebstore.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.reksoft.interns.projectwebstore.Mapper.UsersMapper;
+import ru.reksoft.interns.projectwebstore.mapper.UsersMapper;
 import ru.reksoft.interns.projectwebstore.dao.UsersRepository;
 import ru.reksoft.interns.projectwebstore.dto.UsersDto;
 import ru.reksoft.interns.projectwebstore.entety.Users;
@@ -31,25 +31,15 @@ public class UsersService {
 //        }
         return usersRepository.findAll().stream().map(usersMapper::toDto).collect(Collectors.toList());
     }
-    public Integer create(UsersDto newUser) {
-        Integer id=newUser.getId();
+    public UsersDto create(UsersDto newUser) { Integer id=newUser.getId();
         usersRepository.saveAndFlush(usersMapper.toEntity(newUser));
-        return id;
+        return newUser;
     }
 
     public Integer update(Integer id, UsersDto usersDto) {
         Integer reternId=id;
         Users users= usersRepository.getById(id);
-        //colorRepository.saveAndFlush(colorMapper.toEntity(colorDTO));
-
-
-
-        users.setFio(usersDto.getFio());
-        users.setLogin(usersDto.getLogin());
-        users.setDateOfBirth(usersDto.getDateOfBirth());
-        users.setPassword(usersDto.getPassword());
-        users.setRule(usersDto.getRule());
-        usersRepository.saveAndFlush(users);
+        usersMapper.updateUser(usersDto,users);
         return reternId;
     }
 }

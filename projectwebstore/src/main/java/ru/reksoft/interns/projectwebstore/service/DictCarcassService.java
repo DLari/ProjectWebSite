@@ -3,10 +3,9 @@ package ru.reksoft.interns.projectwebstore.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.reksoft.interns.projectwebstore.Mapper.DictCarcassMapper;
+import ru.reksoft.interns.projectwebstore.mapper.DictCarcassMapper;
 import ru.reksoft.interns.projectwebstore.dao.DictCarcassRepository;
 import ru.reksoft.interns.projectwebstore.dto.DictCarcassDto;
-import ru.reksoft.interns.projectwebstore.entety.DictCarcass;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -31,7 +31,7 @@ public class Orders {
 
 
     @Id
-  //  @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
    @Column( name = "id")
     private Integer id;
 
@@ -41,7 +41,55 @@ public class Orders {
     @Column( name = "date")
     private Date date;
 
-/* client_id
+    public AutoInStock getAutoInStock() {
+        return autoInStock;
+    }
+
+    public void setAutoInStock(AutoInStock autoInStock) {
+        this.autoInStock = autoInStock;
+    }
+
+    public DictOrderStatus getDictOrderStatus() {
+        return dictOrderStatus;
+    }
+
+    public void setDictOrderStatus(DictOrderStatus dictOrderStatus) {
+        this.dictOrderStatus = dictOrderStatus;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    /* client_id
 auto_in stock_id*/
 
 }

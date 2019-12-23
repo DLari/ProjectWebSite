@@ -3,8 +3,8 @@ package ru.reksoft.interns.projectwebstore.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.reksoft.interns.projectwebstore.Mapper.EngineMapper;
-import ru.reksoft.interns.projectwebstore.Search.SearchSpecifications;
+import ru.reksoft.interns.projectwebstore.mapper.EngineMapper;
+import ru.reksoft.interns.projectwebstore.search.SearchSpecifications;
 import ru.reksoft.interns.projectwebstore.dao.EngineRepository;
 import ru.reksoft.interns.projectwebstore.dto.EngineDto;
 import ru.reksoft.interns.projectwebstore.entety.Engine;
@@ -35,24 +35,15 @@ public class EngineService {
         return engineRepository.findAll(SearchSpecifications.findAllNotRemovedEngine()).stream().map(engineMapper::toDto).collect(Collectors.toList());
     }
 
-    public Integer create(EngineDto newEngine) {
-        Integer id=newEngine.getId();
+    public EngineDto create(EngineDto newEngine) {
         engineRepository.saveAndFlush(engineMapper.toEntity(newEngine));
-        return id;
+        return newEngine;
     }
 
     public Integer update(Integer id, EngineDto engineDto) {
         Integer reternId=id;
         Engine engine= engineRepository.getById(id);
-        //colorRepository.saveAndFlush(colorMapper.toEntity(colorDTO));
-
-
-        engine.setName(engineDto.getName());
-        engine.setPrice(engineDto.getPrice());
-        engine.setRemoved(engineDto.getRemoved());
-        engine.setFuelConsumption(engineDto.getFuelConsumption());
-        engine.setPower(engineDto.getPower());
-        engineRepository.saveAndFlush(engine);
+        engineMapper.updateEngine(engineDto,engine);
         return reternId;
     }
 

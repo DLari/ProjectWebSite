@@ -1,4 +1,4 @@
-package ru.reksoft.interns.projectwebstore.Mapper;
+package ru.reksoft.interns.projectwebstore.mapper;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -17,7 +17,7 @@ public class Users {
     private List<Orders> orders;
 
     @Id
-   // @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 

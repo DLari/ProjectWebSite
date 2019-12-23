@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.reksoft.interns.projectwebstore.dto.EngineDto;
 import ru.reksoft.interns.projectwebstore.service.EngineService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -33,9 +34,8 @@ public class EngineController {
     }
 
     @PostMapping("")
-    public Integer create(@RequestBody EngineDto newEngine) {
-        Integer id= engineService.create(newEngine);
-        return id;
+    public EngineDto create(@RequestBody @Valid EngineDto newEngine) {
+        return engineService.create(newEngine);
     }
     @PutMapping(value = "/{id}")
     public Integer update(@PathVariable Integer id, @RequestBody EngineDto engineDto) {

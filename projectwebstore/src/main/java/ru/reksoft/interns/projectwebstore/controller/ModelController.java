@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.reksoft.interns.projectwebstore.dto.ModelDto;
 import ru.reksoft.interns.projectwebstore.service.ModelService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -32,9 +33,8 @@ public class ModelController {
         return modelService.findModelAll();
     }
     @PostMapping("")
-    public Integer create(@RequestBody ModelDto newModel) {
-        Integer id= modelService.create(newModel);
-        return id;
+    public ModelDto create(@RequestBody @Valid ModelDto newModel) {
+        return modelService.create(newModel);
     }
 
     @PutMapping(value = "/{id}")

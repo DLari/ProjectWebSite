@@ -1,4 +1,4 @@
-package ru.reksoft.interns.projectwebstore.Search;
+package ru.reksoft.interns.projectwebstore.search;
 
 
 import org.springframework.data.jpa.domain.Specification;

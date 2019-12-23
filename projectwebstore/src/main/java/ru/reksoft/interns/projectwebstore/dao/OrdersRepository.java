@@ -7,4 +7,5 @@ import ru.reksoft.interns.projectwebstore.entety.Orders;
 @Repository
 public interface OrdersRepository extends JpaRepository<Orders, Long> {
     Orders getById (Integer id);
+    //void deleteById(Integer id);
 }

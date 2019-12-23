@@ -2,7 +2,7 @@ package ru.reksoft.interns.projectwebstore.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.reksoft.interns.projectwebstore.Mapper.DictOrderStatusMapper;
+import ru.reksoft.interns.projectwebstore.mapper.DictOrderStatusMapper;
 import ru.reksoft.interns.projectwebstore.dao.DictOrderStatusRepository;
 import ru.reksoft.interns.projectwebstore.dto.DictOrderStatusDto;
 

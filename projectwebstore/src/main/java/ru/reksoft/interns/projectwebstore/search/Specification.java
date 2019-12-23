@@ -1,4 +1,4 @@
-package ru.reksoft.interns.projectwebstore.Search;//package ru.reksoft.interns.carstore.Search;
+package ru.reksoft.interns.projectwebstore.search;//package ru.reksoft.interns.carstore.Search;
 //
 //import javax.persistence.criteria.CriteriaBuilder;
 //import javax.persistence.criteria.CriteriaQuery;

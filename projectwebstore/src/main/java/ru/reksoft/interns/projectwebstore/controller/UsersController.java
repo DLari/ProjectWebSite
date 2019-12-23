@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.reksoft.interns.projectwebstore.dto.UsersDto;
 import ru.reksoft.interns.projectwebstore.service.UsersService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -31,9 +32,8 @@ public class UsersController {
     }
 
     @PostMapping("")
-    public Integer create(@RequestBody UsersDto newUser) {
-        Integer id= usersService.create(newUser);
-        return id;
+    public UsersDto create(@RequestBody @Valid UsersDto newUser) {
+        return usersService.create(newUser);
     }
 
     @PutMapping(value = "/{id}")

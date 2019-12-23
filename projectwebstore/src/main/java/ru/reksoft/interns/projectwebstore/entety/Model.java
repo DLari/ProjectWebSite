@@ -25,7 +25,7 @@ public class Model {
     private List<Engine> engines;
 
     @Id
-   // @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column( name = "id")
     private Integer id;
 

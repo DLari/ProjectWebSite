@@ -2,8 +2,9 @@ package ru.reksoft.interns.projectwebstore.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.reksoft.interns.projectwebstore.Mapper.ModelMapperr;
-import ru.reksoft.interns.projectwebstore.Search.SearchSpecifications;
+import ru.reksoft.interns.projectwebstore.dao.DictCarcassRepository;
+import ru.reksoft.interns.projectwebstore.mapper.ModelMapperr;
+import ru.reksoft.interns.projectwebstore.search.SearchSpecifications;
 import ru.reksoft.interns.projectwebstore.dao.ModelRepository;
 import ru.reksoft.interns.projectwebstore.dto.ModelDto;
 import ru.reksoft.interns.projectwebstore.entety.Model;
@@ -18,6 +19,9 @@ public class ModelService {
 
     @Autowired
     private ModelRepository modelRepository;
+
+    @Autowired
+    private DictCarcassRepository dictCarcassRepository;
 
     @Autowired
     private ModelMapperr modelMapper;
@@ -36,24 +40,15 @@ public class ModelService {
         return modelRepository.findAll(SearchSpecifications.findAllNotRemovedModel()).stream().map(modelMapper::toDto).collect(Collectors.toList());
     }
 
-    public Integer create(ModelDto newModel) {
-        Integer id=newModel.getId();
+    public ModelDto create(ModelDto newModel) {
         modelRepository.saveAndFlush(modelMapper.toEntity(newModel));
-        return id;
+        return newModel;
     }
 
     public Integer update(Integer id, ModelDto modelDTO) {
         Integer reternId=id;
         Model model= modelRepository.getById(id);
-        //colorRepository.saveAndFlush(colorMapper.toEntity(colorDTO));
-
-
-        model.setName(modelDTO.getName());
-        model.setPrice(modelDTO.getPrice());
-        model.setRemoved(modelDTO.getRemoved());
-        model.setLenghtCarcass(modelDTO.getLenghtCarcass());
-        model.setWidthCarcass(modelDTO.getWidthCarcass());
-        modelRepository.saveAndFlush(model);
+        modelMapper.updateModel(modelDTO,model);
         return reternId;
     }
 

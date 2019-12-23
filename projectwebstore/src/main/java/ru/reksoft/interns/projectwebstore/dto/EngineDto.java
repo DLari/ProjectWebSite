@@ -3,6 +3,10 @@ package ru.reksoft.interns.projectwebstore.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
 @Setter
@@ -17,18 +21,26 @@ public class EngineDto {
 //        this.fuelConsumption=fuelConsumption;
 //    };
 
+    @NotNull
     private Integer id;
 
+    @NotBlank
+    @Size(min = 4,max=20)
     private String name;
 
+    @NotNull
+    @DecimalMin(value = "10.0", inclusive = true)
     private BigDecimal price;
 
     private Boolean removed;
 
+    @NotBlank
     private Integer power;
 
+    @NotBlank
     private Integer fuelConsumption;
 
+    @NotBlank
     private  ModelDto model;
 
     public Integer getId() {
@@ -78,12 +90,12 @@ public class EngineDto {
     public void setFuelConsumption(Integer fuelConsumption) {
         this.fuelConsumption = fuelConsumption;
     }
-
-    public ModelDto getModel() {
-        return model;
-    }
-
-    public void setModel(ModelDto model) {
-        this.model = model;
-    }
+//
+//    public ModelDto getModel() {
+//        return model;
+//    }
+//
+//    public void setModel(ModelDto model) {
+//        this.model = model;
+//    }
 }

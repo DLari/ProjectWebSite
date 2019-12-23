@@ -1,13 +1,10 @@
-package ru.reksoft.interns.projectwebstore.Mapper;
+package ru.reksoft.interns.projectwebstore.mapper;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.reksoft.interns.projectwebstore.dto.ColorDTO;
 import ru.reksoft.interns.projectwebstore.entety.Color;
-
-import java.util.Objects;
-import java.util.Optional;
 
 @Component
 public class ColorMapper {
@@ -23,12 +20,12 @@ public class ColorMapper {
     public ColorDTO toDto(Color entity) {
         return modelMapper.map(entity, ColorDTO.class);
     }
-//    public ColorDTO toDto(Color entity) {
-//        return new ColorDTO(
-//                entity.getId(),
-//                entity.getName(),
-//                entity.getPrice(),
-//                entity.getRemoved()
-//        );
-//    }
+
+    public  Color updateMapper (ColorDTO colorDTO, Color color) {
+        color.setName(colorDTO.getName());
+        color.setPrice(colorDTO.getPrice());
+        color.setRemoved(colorDTO.getRemoved());
+        return color;
+    }
+
 }

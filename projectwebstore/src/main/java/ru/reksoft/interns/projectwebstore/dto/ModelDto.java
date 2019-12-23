@@ -3,6 +3,9 @@ package ru.reksoft.interns.projectwebstore.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
 @Setter
@@ -11,16 +14,24 @@ public class ModelDto {
 
     private Integer id;
 
+    @NotBlank
+    @Size(min=2, max=50)
     private String name;
 
+    @NotBlank
+    @DecimalMin(value = "10.0", inclusive = true)
     private BigDecimal price;
 
+    @NotBlank
     private String widthCarcass;
 
+    @NotBlank
     private String lenghtCarcass;
+
 
     private Boolean removed;
 
+    @NotBlank
     private DictCarcassDto dictCarcass;
 
     public Integer getId() {

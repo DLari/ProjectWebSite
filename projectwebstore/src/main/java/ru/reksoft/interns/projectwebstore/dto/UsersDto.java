@@ -3,6 +3,7 @@ package ru.reksoft.interns.projectwebstore.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.*;
 import java.sql.Date;
 import java.util.List;
 
@@ -12,14 +13,21 @@ public class UsersDto {
 
     private Integer id;
 
+    @NotBlank
+    @Size(min = 5,max = 20)
     private String fio;
 
+    @NotEmpty
+    @Past
     private Date dateOfBirth;
 
+    @Pattern(regexp = "\\w{7}")
     private String login;
 
+    @Pattern(regexp = "(?-i)(?=^.{8,}$)((?!.*\\s)(?=.*[A-Z])(?=.*[a-z]))((?=(.*\\d){1,})|(?=(.*\\W){1,}))^.*$")
     private String password;
 
+    @NotBlank
     private String rule;
 
     public Integer getId() {
